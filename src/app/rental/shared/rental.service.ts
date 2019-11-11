@@ -28,16 +28,21 @@ export class RentalService {
     }
   );
 
+  public getRentalById(rentalId: string): Observable<IRental> {
+    return new Observable<IRental>((observer): TeardownLogic => {
+      setTimeout(() => {
+        const foundRental = this.rentals.find(r => `${r.id}` === rentalId);
+        observer.next(foundRental);
+      }, 1000);
+    });
+  }
+
   public getRentals = (): Observable<IRental[]> => {
     const rentalObservable = new Observable<IRental[]>(
       (observer): TeardownLogic => {
         setTimeout(() => {
           observer.next([...this.rentals]);
         }, 1000);
-
-        setTimeout(() => {
-          observer.complete();
-        }, 5000);
     });
     return rentalObservable;
   }

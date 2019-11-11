@@ -1,4 +1,5 @@
 export interface IRental {
+    id?: number;
     title: string;
     city: string;
     street: string;
@@ -12,7 +13,7 @@ export interface IRental {
 }
 
 export class Rental implements IRental {
-    private id: number;
+    id: number;
     title: string;
     city: string;
     street: string;
@@ -24,17 +25,19 @@ export class Rental implements IRental {
     shared: false;
     createdAt: string;
 
-    constructor(data: IRental, id?: number) {
-        this.id = id || 0;
-        this.title = data.title;
-        this.city = data.city;
-        this.street = data.street;
-        this.category = data.category;
-        this.image = data.image;
-        this.bedrooms = data.bedrooms;
-        this.description = data.description;
-        this.dailyRate = data.dailyRate;
-        this.shared = data.shared;
-        this.createdAt = data.createdAt;
+    constructor(data?: IRental, id?: number) {
+        if (data) {
+            this.id = id || 0;
+            this.title = data.title;
+            this.city = data.city;
+            this.street = data.street;
+            this.category = data.category;
+            this.image = data.image;
+            this.bedrooms = data.bedrooms;
+            this.description = data.description;
+            this.dailyRate = data.dailyRate;
+            this.shared = data.shared;
+            this.createdAt = data.createdAt;
+        }
     }
 }
