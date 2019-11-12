@@ -5,7 +5,7 @@ import { RentalListItemComponent } from './rental-list-item/rental-list-item.com
 import { RentalComponent } from './rental.component';
 import { RentalDetailComponent } from './rental-detail/rental-detail.component';
 import { RentalRoutingModule } from './rental-routing.module';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -19,6 +19,7 @@ import { RentalRoutingModule } from './rental-routing.module';
   imports: [
     CommonModule,
     RentalRoutingModule,
+    HttpClientModule,
   ]
 })
 export class RentalModule { }
