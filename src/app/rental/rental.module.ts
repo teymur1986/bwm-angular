@@ -6,6 +6,8 @@ import { RentalComponent } from './rental.component';
 import { RentalDetailComponent } from './rental-detail/rental-detail.component';
 import { RentalRoutingModule } from './rental-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NgPipesModule } from 'ngx-pipes';
+import { MapModule } from '../common/map/map.module';
 
 
 
@@ -20,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     RentalRoutingModule,
     HttpClientModule,
+    NgPipesModule,
+    MapModule,
   ]
 })
 export class RentalModule { }
