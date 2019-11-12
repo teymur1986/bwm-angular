@@ -7,6 +7,9 @@
 # Only exists if Bazel was run
 /bazel-out
 
+# server secure data
+/server/config/*
+
 # dependencies
 /node_modules
 
